@@ -1,7 +1,8 @@
 body{
     padding: 25px;
-    background-image: url('assets/land.png');
+    background-image: url('assets/backg.png');
     background-size: cover;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 h2{
@@ -57,7 +58,50 @@ h2{
     z-index: 1;
   }
   
-  
+.ston1{
+  width: 60px;
+  height: 60px;
+  position: fixed;
+  z-index: 1000;
+  background-size: 100% 100%;
+  background-image: url('assets/ston.png');
+  animation: spin 0.35s step-end infinite;
+}
+#ston2{
+  width: 60px;
+  height: 60px;
+  position: fixed;
+  z-index: 1000;
+  background-size: 100% 100%;
+  background-image: url('assets/ston.png');
+  animation: spin 0.35s step-end infinite;
+}
+#ston3{
+  width: 60px;
+  height: 60px;
+  position: fixed;
+  z-index: 1000;
+  background-size: 100% 100%;
+  background-image: url('assets/ston.png');
+  animation: spin 0.35s step-end infinite;
+}
+
+@keyframes spin{
+  0%, 15%{
+    transform: rotate(70deg);
+  }
+  16%, 50%{
+    transform: rotate(150deg);
+  }
+  51%, 74%{
+    transform: rotate(250deg);
+  }
+  75%, 100%{
+    transform: rotate(360deg);
+  }
+}
+
+
   
   
   

@@ -1,15 +1,22 @@
 //===================game variables==============================
+const ston1 = document.getElementById('ston1');
+/*const ston2 = document.getElementById('ston2');
+const ston3 = document.getElementById('ston3');*/
+
+const ston1_class= 'ston1',
+    ston_count=5;
+//================================================================
 const grass_class = 'grass',
     grass_count = 50;
 const ball_class = 'pokeball',
-    ball_count = 5;
+    ball_count = 10;
 
 var score = 0;
 var views = document.getElementById('sc');
 
 const PLAYER = document.querySelector(".player");
 
-const PLAYER_SPEED = 1.8;
+const PLAYER_SPEED = 2.8;
 
 let playerPos = {
     x: 0,
@@ -26,22 +33,13 @@ const PLAYER_START_POS = {
 }
 
 const SOUND = new Audio("assets/coin.mp3");
-//*********************************************** */
-
-var mPx = PLAYER.style.left;
-var mPy = PLAYER.style.top;
-var mPw = PLAYER.style.width;
-var mPh = PLAYER.style.height;
-
-var mBx = document.querySelector(".pokeball");
-var mBy = document.querySelector(".pokeball");
-var mBw = document.querySelector(".pokeball");
-var mBh = document.querySelector(".pokeball");
-
 //===================game functions==============================
 function start(){
     randomElements(grass_class,grass_count);
     randomElements(ball_class,ball_count);
+    randomElements(ston1_class,ston_count);
+
+    
 
     playerPos = PLAYER_START_POS;
 }
@@ -52,8 +50,8 @@ function update(){
     PLAYER.style.left= playerPos.x + 'px';
     PLAYER.style.top= playerPos.y + 'px';
 
+
     checkCollisions();
-    //Collisions(mPx,mPy,mPw,mPh,mBx,mBy,mBw,mBh);
 
     requestAnimationFrame(update);
 }
@@ -145,6 +143,11 @@ function collision($div1, $div2){
     if (b1 < y2 || y1 > b2 || r1 < x2 || x1 > r2) return false;
     return true;
 }
+
+//=========================================================
+
+
+
 //===================run the game=================================
 start();
 update();
